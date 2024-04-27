@@ -89,7 +89,7 @@ where
 
 	futures::select! {
 		() = display_notifications.fuse() => (),
-		() = display_block_import(client).fuse() => (),
+		// () = display_block_import(client).fuse() => (),
 	};
 }
 
