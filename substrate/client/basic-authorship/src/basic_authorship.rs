@@ -196,7 +196,7 @@ where
 	) -> Proposer<B, Block, C, A, PR> {
 		let parent_hash = parent_header.hash();
 
-		info!("🙌 Starting consensus session on top of parent {:?}", parent_hash);
+		// info!("🙌 Starting consensus session on top of parent {:?}", parent_hash);
 
 		let proposer = Proposer::<_, _, _, _, PR> {
 			spawn_handle: self.spawn_handle.clone(),
@@ -351,7 +351,7 @@ where
 		let proof =
 			PR::into_proof(proof).map_err(|e| sp_blockchain::Error::Application(Box::new(e)))?;
 
-		self.print_summary(&block, end_reason, block_took, block_timer.elapsed());
+		// self.print_summary(&block, end_reason, block_took, block_timer.elapsed());
 		Ok(Proposal { block, proof, storage_changes })
 	}
 
